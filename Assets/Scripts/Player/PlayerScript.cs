@@ -9,8 +9,11 @@ public class PlayerScript : MonoBehaviour {
     private PlayerState state;
 
     public bool isGrounded = true;
+    public bool isRailing = false;
 
     private Rigidbody2D rigidbody;
+
+    private GameObject cableInRange;
     void Start() {
         state = new PlayerState();
         rigidbody = GetComponent<Rigidbody2D>();
@@ -32,23 +35,38 @@ public class PlayerScript : MonoBehaviour {
                 GetComponent<JumpScript>().Jump(rigidbody, input.map);
                 break;
             case State.Rail:
+                if (!isRailing) {
+                    GetComponent<RailScript>().FollowLine(rigidbody, cableInRange);
+                }
                 break;
         }
         Debug.Log(state.State);
     }
 
     void UpdateState() {
-        if (input.map["jump"] != 0) {
-            state.ChangeState(State.Jump);
-        } else if (input.map["horizontal"] != 0 && state.State != State.Jump || state.State != State.Rail) {
-            state.ChangeState(State.Run);
-        } else if (input.map["rail"] != 0) {
+        if (input.map["rail"] != 0 && cableInRange || isRailing) {
             state.ChangeState(State.Rail);
+
+        } else if (input.map["jump"] != 0) {
+            state.ChangeState(State.Jump);
+        } else if (input.map["horizontal"] != 0 && state.State != State.Jump) {
+            state.ChangeState(State.Run);
         } else {
             state.ChangeState(State.Idle);
         }
     }
 
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.transform.parent.name == "Cable") {
+            cableInRange = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.transform.parent.name == "Cable") {
+            cableInRange = null;
+        }
+    }
 
 }

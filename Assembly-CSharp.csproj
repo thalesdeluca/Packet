@@ -40,6 +40,7 @@
      <Compile Include="Assets\Scripts\Cable\PlugScript.cs" />
      <Compile Include="Assets\Scripts\Common\CameraScript.cs" />
      <Compile Include="Assets\Scripts\Player\Actions\JumpScript.cs" />
+     <Compile Include="Assets\Scripts\Player\Actions\RailScript.cs" />
      <Compile Include="Assets\Scripts\Player\Actions\RunScript.cs" />
      <Compile Include="Assets\Scripts\Player\GroundScript.cs" />
      <Compile Include="Assets\Scripts\Player\InputController.cs" />

@@ -10,6 +10,8 @@ public class CameraScript : MonoBehaviour {
     public float moveSpeed = 0.4f;
 
     public float offsetX = 0.20f;
+
+    public bool locked = false;
     void Start() {
 
     }
@@ -20,7 +22,14 @@ public class CameraScript : MonoBehaviour {
             Vector3 target = new Vector3(player.position.x, transform.position.y, transform.position.z);
             Vector3 playerPosition = player.position;
             playerPosition.z = -10;
-            transform.position = Vector3.Lerp(target, playerPosition, moveSpeed * Time.deltaTime);
+
+            if (locked) {
+                transform.position = Vector3.MoveTowards(target, playerPosition, moveSpeed * Time.deltaTime);
+
+            } else {
+                transform.position = Vector3.Lerp(target, playerPosition, moveSpeed * Time.deltaTime);
+
+            }
 
         }
     }

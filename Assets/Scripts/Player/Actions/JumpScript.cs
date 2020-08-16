@@ -17,7 +17,6 @@ public class JumpScript : MonoBehaviour {
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpForce);
         }
 
-        Debug.Log(input["horizontal"]);
         if (input["horizontal"] != 0) {
             GetComponent<RunScript>().Run(input["horizontal"], rigidbody);
         }

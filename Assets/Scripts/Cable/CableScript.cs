@@ -5,26 +5,16 @@ using UnityEngine;
 public class CableScript : MonoBehaviour {
     private Vector3[] points;
 
+    public float speed = 2f;
     private bool onRange = false;
     private string plug;
 
     void Start() {
+        points = new Vector3[10];
         GetComponent<LineRenderer>().GetPositions(points);
     }
 
-    void FollowLine() {
-        if (points.Length == 0) {
-            return;
-        }
 
-        if (onRange) {
-            if (plug == "Start") {
-
-            } else {
-
-            }
-        }
-    }
 
     public void ChangeOnRange(bool onRange, string name) {
         this.onRange = onRange;

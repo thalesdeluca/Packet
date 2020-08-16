@@ -11,10 +11,15 @@ public class GroundScript : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        player.isGrounded = true;
+        if (other.name == "Floor") {
+            player.isGrounded = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        player.isGrounded = false;
+        if (other.name == "Floor") {
+            player.isGrounded = false;
+        }
+
     }
 }

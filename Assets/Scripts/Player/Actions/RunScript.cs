@@ -7,5 +7,11 @@ public class RunScript : MonoBehaviour {
     public void Run(float input, Rigidbody2D rigidbody) {
         Vector2 newVelocity = new Vector2(input * moveSpeed * Time.deltaTime, rigidbody.velocity.y);
         rigidbody.velocity = newVelocity;
+
+        if (input > 0) {
+            GetComponent<SpriteRenderer>().flipX = false;
+        } else {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 }
