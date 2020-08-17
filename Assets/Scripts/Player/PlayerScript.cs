@@ -27,6 +27,8 @@ public class PlayerScript : MonoBehaviour {
     void HandleState() {
         switch (state.State) {
             case State.Idle:
+                //Resets horizontal velocity
+                rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
                 break;
             case State.Run:
                 GetComponent<RunScript>().Run(input.map["horizontal"], rigidbody);
@@ -40,7 +42,7 @@ public class PlayerScript : MonoBehaviour {
                 }
                 break;
         }
-        Debug.Log(state.State);
+
     }
 
     void UpdateState() {

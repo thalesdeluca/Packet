@@ -14,7 +14,7 @@ public class JumpScript : MonoBehaviour {
     }
     public void Jump(Rigidbody2D rigidbody, Dictionary<string, float> input) {
         if (player.isGrounded) {
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpForce);
+            rigidbody.AddForce(new Vector2(rigidbody.velocity.x, jumpForce), ForceMode2D.Impulse);
         }
 
         if (input["horizontal"] != 0) {

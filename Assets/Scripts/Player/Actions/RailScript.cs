@@ -49,7 +49,7 @@ public class RailScript : MonoBehaviour {
         int count = line.positionCount;
 
         Vector3[] points = new Vector3[count];
-
+        rigidbody.velocity = Vector2.zero;
         line.GetPositions(points);
 
         player.isRailing = true;
@@ -71,10 +71,11 @@ public class RailScript : MonoBehaviour {
     }
 
     private void ResetCable() {
-        player.isRailing = false;
         rigidbody.bodyType = RigidbodyType2D.Dynamic;
         camera.locked = false;
         actualPoint = 0;
+        rigidbody.velocity = Vector2.zero;
         gPoints.Clear();
+        player.isRailing = false;
     }
 }
