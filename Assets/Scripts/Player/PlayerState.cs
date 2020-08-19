@@ -7,20 +7,21 @@ public enum State {
     Idle,
     Run,
     Jump,
-    Rail
+    Rail,
+    Damage
 }
 public class PlayerState {
     private State state = State.Idle;
 
     public State State { get { return state; } }
 
-    public PlayerState () {
+    public PlayerState() {
         state = State.Idle;
     }
 
     public void ChangeState(State newState) {
-      if(Enum.IsDefined(typeof(State), newState)) {
-          state = newState;
-      }
+        if (Enum.IsDefined(typeof(State), newState)) {
+            state = newState;
+        }
     }
 }

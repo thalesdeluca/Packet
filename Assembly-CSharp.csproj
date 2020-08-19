@@ -36,16 +36,19 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Actions\JumpScript.cs" />
+     <Compile Include="Assets\Scripts\Actions\RailScript.cs" />
+     <Compile Include="Assets\Scripts\Actions\RunScript.cs" />
      <Compile Include="Assets\Scripts\Cable\CableScript.cs" />
      <Compile Include="Assets\Scripts\Cable\PlugScript.cs" />
      <Compile Include="Assets\Scripts\Common\CameraScript.cs" />
-     <Compile Include="Assets\Scripts\Player\Actions\JumpScript.cs" />
-     <Compile Include="Assets\Scripts\Player\Actions\RailScript.cs" />
-     <Compile Include="Assets\Scripts\Player\Actions\RunScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />
+     <Compile Include="Assets\Scripts\Enemy\SpawnScript.cs" />
      <Compile Include="Assets\Scripts\Player\GroundScript.cs" />
      <Compile Include="Assets\Scripts\Player\InputController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
+     <None Include="Assets\UnityAds\link.xml" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -228,6 +231,12 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements.Editor">
+        <HintPath>C:/Users/deluc/Documents/Packet/Assets/UnityAds/UnityEngine.Advertisements.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Monetization.Editor">
+        <HintPath>C:/Users/deluc/Documents/Packet/Assets/UnityAds/UnityEngine.Monetization.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
         <HintPath>C:/Users/deluc/Documents/Packet/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
@@ -601,9 +610,6 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:/Users/deluc/Documents/Packet/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Monetization">
-        <HintPath>C:/Users/deluc/Documents/Packet/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
         <HintPath>C:/Users/deluc/Documents/Packet/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
@@ -615,9 +621,6 @@
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>C:/Users/deluc/Documents/Packet/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-        <HintPath>C:/Users/deluc/Documents/Packet/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
         <HintPath>C:/Users/deluc/Documents/Packet/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>

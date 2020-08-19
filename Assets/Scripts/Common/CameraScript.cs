@@ -24,7 +24,7 @@ public class CameraScript : MonoBehaviour {
             playerPosition.z = -10;
 
             if (locked) {
-                transform.position = Vector3.MoveTowards(target, playerPosition, moveSpeed * Time.deltaTime);
+                transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
 
             } else {
                 transform.position = Vector3.Lerp(target, playerPosition, moveSpeed * Time.deltaTime);

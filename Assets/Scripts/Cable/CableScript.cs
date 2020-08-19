@@ -10,7 +10,7 @@ public class CableScript : MonoBehaviour {
     private string plug;
 
     void Start() {
-        points = new Vector3[10];
+        points = new Vector3[1000000];
         GetComponent<LineRenderer>().GetPositions(points);
     }
 
