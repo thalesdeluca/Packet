@@ -32,15 +32,12 @@ public class PlayerScript : MonoBehaviour {
             case State.Idle:
                 //Resets horizontal velocity
                 rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
-
                 break;
             case State.Run:
                 GetComponent<RunScript>().Run(input.map["horizontal"], rigidbody);
-                animator.SetBool("Moving", true);
                 break;
             case State.Jump:
                 GetComponent<JumpScript>().Jump(rigidbody, input.map);
-
                 break;
             case State.Rail:
                 if (!isRailing) {
@@ -65,10 +62,8 @@ public class PlayerScript : MonoBehaviour {
             state.ChangeState(State.Idle);
         }
 
-
         animator.SetBool("Grounded", isGrounded);
         animator.SetBool("Moving", input.map["horizontal"] != 0 || state.State == State.Run);
-
     }
 
 

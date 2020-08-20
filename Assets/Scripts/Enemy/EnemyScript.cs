@@ -18,7 +18,6 @@ public class EnemyScript : MonoBehaviour {
     public Behaviour startingBehaviour;
     private EnemyState state;
 
-    private GameObject spottedObject;
     // Start is called before the first frame update
     void Start() {
         state = EnemyState.Idle;
@@ -28,35 +27,10 @@ public class EnemyScript : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
     void Update() {
-        UpdateState();
-        HandleState();
+        GetComponent<SpotScript>().SearchingPlayer();
     }
 
-    void UpdateState() {
-        if (spottedObject) {
-            state = EnemyState.Spot;
-        }
-    }
 
-    void HandleState() {
-        switch (state) {
-            case EnemyState.Follow:
-                break;
-            case EnemyState.Spot:
-                //metal gear spotted
-                break;
-            case EnemyState.Walk:
-                break;
-            case EnemyState.Idle:
-                break;
-        }
-    }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.name == "Player") {
-            spottedObject = other.gameObject;
-        }
-    }
 }
