@@ -42,6 +42,8 @@
      <Compile Include="Assets\Scripts\Cable\CableScript.cs" />
      <Compile Include="Assets\Scripts\Cable\PlugScript.cs" />
      <Compile Include="Assets\Scripts\Common\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\Common\GameController.cs" />
+     <Compile Include="Assets\Scripts\Common\HealthScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\SpawnScript.cs" />
      <Compile Include="Assets\Scripts\Enemy\SpotScript.cs" />
@@ -49,6 +51,8 @@
      <Compile Include="Assets\Scripts\Player\InputController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
+     <Compile Include="Assets\Scripts\UI\HealthUI.cs" />
+     <Compile Include="Assets\Scripts\UI\TimeUI.cs" />
      <None Include="Assets\UnityAds\link.xml" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

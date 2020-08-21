@@ -18,6 +18,8 @@ public class EnemyScript : MonoBehaviour {
     public Behaviour startingBehaviour;
     private EnemyState state;
 
+    public float damage = 20f;
+
     // Start is called before the first frame update
     void Start() {
         state = EnemyState.Idle;
@@ -32,5 +34,12 @@ public class EnemyScript : MonoBehaviour {
     }
 
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.name == "Player") {
+            other.collider.SendMessage("TakeDamage", damage);
+            //Destroy animation
+            Destroy(this.gameObject);
+        }
+    }
 
 }

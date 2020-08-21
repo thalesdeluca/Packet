@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour {
     private GameObject cableInRange;
 
     private Animator animator;
+
     void Start() {
         state = new PlayerState();
         animator = GetComponent<Animator>();
@@ -78,5 +79,7 @@ public class PlayerScript : MonoBehaviour {
             cableInRange = null;
         }
     }
+
+
 
 }
