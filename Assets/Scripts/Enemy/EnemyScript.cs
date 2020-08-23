@@ -30,7 +30,8 @@ public class EnemyScript : MonoBehaviour {
     }
 
     void Update() {
-        GetComponent<SpotScript>().SearchingPlayer();
+        if (!PauseManager.Instance.Paused)
+            GetComponent<SpotScript>().SearchingPlayer();
     }
 
 

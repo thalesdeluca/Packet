@@ -24,8 +24,11 @@ public class PlayerScript : MonoBehaviour {
     }
 
     void Update() {
-        UpdateState();
-        HandleState();
+        if (!PauseManager.Instance.Paused) {
+            UpdateState();
+            HandleState();
+        }
+
     }
 
     void HandleState() {
